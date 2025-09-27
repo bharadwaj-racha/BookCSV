@@ -1,38 +1,131 @@
-.App {
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
   text-align: center;
+  color: #4a148c;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Controls */
+.controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+button,
+.btn-upload {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover,
+.btn-upload:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="search"],
+select {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  border-color: #6a11cb;
+  outline: none;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #eee;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+tbody tr:hover {
+  background: #f1f8ff;
+  transition: 0.3s;
+}
+
+td input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 4px;
+}
+
+td input:focus {
+  outline: none;
+  background: #fff5c3;
+  border-radius: 4px;
+}
+
+/* Highlight edits */
+tr.edited {
+  background: #fff3e0 !important;
+}
+
+td input.edited {
+  background: #ffe0b2;
+  border-radius: 4px;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+}
+
+.pagination span {
+  font-weight: bold;
+  color: #333;
 }
