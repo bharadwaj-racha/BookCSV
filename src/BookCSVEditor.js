@@ -106,7 +106,7 @@ export default function BookCSVEditor() {
   const pageCount = Math.max(1, Math.ceil(processedRows.length / pageSize));
   useEffect(() => {
     if (page > pageCount) setPage(pageCount);
-  }, [pageCount]);
+  }, [page,pageCount]);
 
   const currentPageRows = useMemo(() => {
     const start = (page - 1) * pageSize;
